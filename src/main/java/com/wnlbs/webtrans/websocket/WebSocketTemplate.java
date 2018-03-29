@@ -11,7 +11,7 @@ import java.util.concurrent.CopyOnWriteArraySet;
  * @Description:
  */
 @Slf4j
-public class WebSocketTemplate {
+public abstract class WebSocketTemplate {
 
     /**
      * 单次会话
@@ -58,5 +58,10 @@ public class WebSocketTemplate {
     public void OnError(Throwable t) {
         onClose();
     }
+
+    /**
+     * 发送消息
+     */
+    public abstract void sendMessage();
 
 }

@@ -19,6 +19,7 @@ public class WebSocketTestSender extends WebSocketTemplate {
     /**
      * 发送消息
      */
+    @Override
     public void sendMessage() {
 
         log.info(("============>sendMsg"));
