@@ -3,6 +3,7 @@ package com.wnlbs.webtrans.websocket;
 import lombok.extern.slf4j.Slf4j;
 
 import javax.websocket.*;
+import java.io.IOException;
 import java.util.concurrent.CopyOnWriteArraySet;
 
 /**
@@ -12,6 +13,14 @@ import java.util.concurrent.CopyOnWriteArraySet;
  */
 @Slf4j
 public abstract class WebSocketTemplate {
+
+    public Session getSession() {
+        return session;
+    }
+
+    public void setSession(Session session) {
+        this.session = session;
+    }
 
     /**
      * 单次会话
@@ -62,6 +71,6 @@ public abstract class WebSocketTemplate {
     /**
      * 发送消息
      */
-    public abstract void sendMessage();
+    public abstract void sendMessage() throws IOException, EncodeException;
 
 }
